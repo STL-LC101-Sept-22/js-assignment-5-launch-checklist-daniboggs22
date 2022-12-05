@@ -17,11 +17,29 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 }
 
 function validateInput(testInput) {
+    
+    
+           
+        // } else if(typeof pilotNameInput.value != 'string' ){
+        //     alert('Incorrect Entry!');
+        //     event.preventDefault();
+        // } else if(typeof copilotNameInput.value != 'string'){
+        //     alert('');
+        // } else if(isNaN(fuelLevelInput.value)=== 'false'){
+        //     alert('');
+        // } else if(isNaN(cargoMassInput.value)){
+        //     alert('');
+    
    
+    //});
 }
+    
+   
+
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-   
+    validateInput();
+
 }
 
 async function myFetch() {
@@ -41,3 +59,4 @@ module.exports.validateInput = validateInput;
 module.exports.formSubmission = formSubmission;
 module.exports.pickPlanet = pickPlanet; 
 module.exports.myFetch = myFetch;
+
