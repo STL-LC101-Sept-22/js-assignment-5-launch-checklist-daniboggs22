@@ -4,6 +4,8 @@
 
 
 
+
+
  window.addEventListener("load", function() {
     // let form = document.querySelector("testForm");
     //   form.addEventListener("formSubmit", function(event) {
@@ -22,10 +24,12 @@
        console.log(listedPlanets);
    }).then(function () {
        console.log(listedPlanets);
+       let selectedPlanet = pickPlanet (listedPlanets);
+       addDestinationInfo(document, selectedPlanet.name, selectedPlanet.diameter, selectedPlanet.star, selectedPlanet.distance, selectedPlanet.moons, selectedPlanet.image);
        // Below this comment call the appropriate helper functions to pick a planet from the list of planets and add that information to your destination.
     //   results = pickPlanet(listedPlanets);
     //   addDestinationInfo(results);
-    //   console.log(results);
+       console.log(addDestinationInfo);
   // });
    
 });

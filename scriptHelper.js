@@ -53,13 +53,17 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         let faultyItems = document.getElementById("faultyItems");
         let launchStatus = document.getElementById("launchStatus");
         
-      if(pilotNameInput.value === ''|| copilotNameInput.value === '' || fuelLevelInput.value === '' || cargoMassInput.value === '' ){
-        {alert("All fields are required!");
+      if(pilotNameInput.value === ''|| copilotNameInput.value === '' || 
+      fuelLevelInput.value === '' || cargoMassInput.value === '' ) {
+        alert("All fields are required!");
         event.preventDefault();
-    } else if (validateInput(pilotNameInput.value) === "Is a Number" || validateInput(copilotNameInput.value) === "Is a Number" || validateInput(fuelLevelInput.value) === 'Not a Number' || validateInput(cargoMassInput.value) === "Not a Number"){
+    } else if(validateInput(pilotNameInput.value) === "Is a Number" || 
+    validateInput(copilotNameInput.value) === "Is a Number" || 
+    validateInput(fuelLevelInput.value) === 'Not a Number' || 
+    validateInput(cargoMassInput.value) === "Not a Number") {
         alert("Make sure to enter valid information for each field!");
         event.preventDefault();
-    } else if(fuelLevelInput.value <= 10000){
+    } else if(fuelLevelInput.value <= 10000) {
         //element.style.visibility = 'hidden';
         faultyItems.fuelStatus.visibilty = "visible";
         faultyItems.fuelStatus.value = "There is not enough fuel for the journey.";
@@ -67,7 +71,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         launchStatus.style.color = "red";
         // change color of font for launchStatus. 
         event.preventDefault();
-    } else if(cargoMassInput.value >= 10000){
+    } else if(cargoMassInput.value >= 10000) {
         faultyItems.cargoMass.visibilty = "visible";
         faultyItems.cargoMass.innerHTML = "Too much mass for the shuttle to take off.";
         launchStatus.innerHTML = "Shuttle Not Ready for Launch";
@@ -77,7 +81,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         launchStatus.innerHTML = "Shuttle is ready for launch.";
         launchStatus.style.color = "green";
         }
-    }  
+     
         });
      };
 
@@ -85,7 +89,9 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 async function myFetch() {
     let planetsReturned;
 
-    planetsReturned = await fetch('https://handlers.education.launchcode.org/static/planets.json').then( function(response) {
+    planetsReturned = await fetch
+    ('https://handlers.education.launchcode.org/static/planets.json')
+    .then( function(response) {
        response.json().then(function(data) {
         return response.json();
 
