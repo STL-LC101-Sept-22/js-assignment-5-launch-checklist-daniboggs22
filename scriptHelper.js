@@ -1,5 +1,5 @@
 // Write your helper functions here!
-// require('isomorphic-fetch');
+ require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
    // Here is the HTML formatting for our mission target div.
@@ -43,40 +43,40 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     const form = document.getElementById("testForm");
     let testVar = document.getELementById("pilotName");
     alert('You typed' + testVar);
-    // const form = document.getElementById("testForm");
-    // let submitFormButton = document.getElementById("submitForm");
-    // submitFormButton.addEventListener("click", function(event) {
+    
+    let submitFormButton = document.getElementById("formSubmit");
+    submitFormButton.addEventListener("click", function(event) {
         
-    // })
-    //form.addEventListener("submitForm", function(event){
-    //     let pilotNameInput = document.getElementById("pilotName");
-    //     let copilotNameInput = document.getElementById("copilotName");
-    //     let fuelLevelInput = document.getElementById("fuelLevel");
-    //     let cargoMassInput = document.getElementById("cargoMass");
-    //     let faultyItems = document.getElementById("faultyItems");
-    //     let launchStatus = document.getElementById("launchStatus");
+    })
+    form.addEventListener("submitForm", function(event){
+        let pilotNameInput = document.getElementById("pilotName");
+        let copilotNameInput = document.getElementById("copilotName");
+        let fuelLevelInput = document.getElementById("fuelLevel");
+        let cargoMassInput = document.getElementById("cargoMass");
+        let faultyItems = document.getElementById("faultyItems");
+        let launchStatus = document.getElementById("launchStatus");
         
-    //  if(false)//pilotNameInput.value === ''|| copilotNameInput.value === '' || fuelLevelInput.value === '' || cargoMassInput.value === '' ){
-    //     {alert("All fields are required!");
-    //     event.preventDefault();}
-    //  } else if (validateInput(pilotNameInput.value) === "Is a Number" || validateInput(copilotNameInput.value) === "Is a Number" || validateInput(fuelLevelInput.value) === 'Not a Number' || validateInput(cargoMassInput.value) === "Not a Number"){
-    //     alert("Make sure to enter valid information for each field!");
-    //     event.preventDefault();
-    //  } else if(fuelLevelInput.value <= 10000){
-    //     //element.style.visibility = 'hidden';
-    //     faultyItems.fuelStatus.visibilty = "visible";
-    //     faultyItems.fuelStatus.value = "Fuel level too low for launch.";
-    //     launchStatus.innerHTML = "Shuttle not ready for launch";
-    //     launchStatus.style.color = "red";
-    //     // change color of font for launchStatus. 
-    //     event.preventDefault();
-    //  } else if(cargoMassInput.value >= 10000){
-    //     faultyItems.cargoMass.visibilty = "visible";
-    //     faultyItems.cargoMass.innerHTML = "There is not enough fuel for the journey.";
-    //     event.preventDefault();
-    //  }
+      if(pilotNameInput.value === ''|| copilotNameInput.value === '' || fuelLevelInput.value === '' || cargoMassInput.value === '' ){
+        {alert("All fields are required!");
+        event.preventDefault();}
+     } else if (validateInput(pilotNameInput.value) === "Is a Number" || validateInput(copilotNameInput.value) === "Is a Number" || validateInput(fuelLevelInput.value) === 'Not a Number' || validateInput(cargoMassInput.value) === "Not a Number"){
+        alert("Make sure to enter valid information for each field!");
+        event.preventDefault();
+     } else if(fuelLevelInput.value <= 10000){
+        //element.style.visibility = 'hidden';
+        faultyItems.fuelStatus.visibilty = "visible";
+        faultyItems.fuelStatus.value = "Fuel level too low for launch.";
+        launchStatus.innerHTML = "Shuttle not ready for launch";
+        launchStatus.style.color = "red";
+        // change color of font for launchStatus. 
+        event.preventDefault();
+     } else if(cargoMassInput.value >= 10000){
+        faultyItems.cargoMass.visibilty = "visible";
+        faultyItems.cargoMass.innerHTML = "There is not enough fuel for the journey.";
+        event.preventDefault();
+     }
         
-        //});
+        });
      };
 
 

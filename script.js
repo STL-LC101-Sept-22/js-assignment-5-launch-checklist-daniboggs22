@@ -5,14 +5,13 @@ const { pickPlanet, addDestinationInfo } = require("./scriptHelper");
 
 
  window.addEventListener("load", function() {
-    
-      form.addEventListener("submitForm", function(event) {
-        console.log("Testing");
+    // let form = document.querySelector("testForm");
+    //   form.addEventListener("formSubmit", function(event) {
+    //     alert("submit clicked");-- already defined in formSubmission function
         formSubmission();
-        console.log("IS IT WORKING!?")
-        
+        preventDefault();
     });
-});
+
     
 
    let listedPlanets;
