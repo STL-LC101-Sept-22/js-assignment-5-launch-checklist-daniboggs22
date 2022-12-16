@@ -19,10 +19,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
     </ol>
     <img src="${planet.image}">
     `
-    
-   }
-
-               
+   }            
    
 }
 
@@ -65,15 +62,20 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
      } else if(fuelLevelInput.value <= 10000){
         //element.style.visibility = 'hidden';
         faultyItems.fuelStatus.visibilty = "visible";
-        faultyItems.fuelStatus.value = "Fuel level too low for launch.";
+        faultyItems.fuelStatus.value = "There is not enough fuel for the journey.";
         launchStatus.innerHTML = "Shuttle not ready for launch";
         launchStatus.style.color = "red";
         // change color of font for launchStatus. 
         event.preventDefault();
      } else if(cargoMassInput.value >= 10000){
         faultyItems.cargoMass.visibilty = "visible";
-        faultyItems.cargoMass.innerHTML = "There is not enough fuel for the journey.";
+        faultyItems.cargoMass.innerHTML = "Too much mass for the shuttle to take off.";
+        launchStatus.innerHTML = "Shuttle not ready for launch";
+        launchStatus.style.color = "red";
         event.preventDefault();
+     } else {
+        launchStatus.innerHTML = "Shuttle is ready for launch.";
+        launchStatus.style.color = "green";
      }
         
         });
