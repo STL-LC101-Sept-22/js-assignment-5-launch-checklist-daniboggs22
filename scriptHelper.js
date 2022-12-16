@@ -38,14 +38,14 @@ function validateInput(testInput) {
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     const form = document.getElementById("testForm");
-    let testVar = document.getELementById("pilotName");
-    alert('You typed' + testVar);
+    // let testVar = document.getELementById("pilotName");
+    // alert('You typed' + testVar);
     
     let submitFormButton = document.getElementById("formSubmit");
     submitFormButton.addEventListener("click", function(event) {
         
     })
-    form.addEventListener("submitForm", function(event){
+    form.addEventListener("formSubmit", function(event){
         let pilotNameInput = document.getElementById("pilotName");
         let copilotNameInput = document.getElementById("copilotName");
         let fuelLevelInput = document.getElementById("fuelLevel");
@@ -55,29 +55,29 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         
       if(pilotNameInput.value === ''|| copilotNameInput.value === '' || fuelLevelInput.value === '' || cargoMassInput.value === '' ){
         {alert("All fields are required!");
-        event.preventDefault();}
-     } else if (validateInput(pilotNameInput.value) === "Is a Number" || validateInput(copilotNameInput.value) === "Is a Number" || validateInput(fuelLevelInput.value) === 'Not a Number' || validateInput(cargoMassInput.value) === "Not a Number"){
+        event.preventDefault();
+    } else if (validateInput(pilotNameInput.value) === "Is a Number" || validateInput(copilotNameInput.value) === "Is a Number" || validateInput(fuelLevelInput.value) === 'Not a Number' || validateInput(cargoMassInput.value) === "Not a Number"){
         alert("Make sure to enter valid information for each field!");
         event.preventDefault();
-     } else if(fuelLevelInput.value <= 10000){
+    } else if(fuelLevelInput.value <= 10000){
         //element.style.visibility = 'hidden';
         faultyItems.fuelStatus.visibilty = "visible";
         faultyItems.fuelStatus.value = "There is not enough fuel for the journey.";
-        launchStatus.innerHTML = "Shuttle not ready for launch";
+        launchStatus.innerHTML = "Shuttle Not Ready for Launch";
         launchStatus.style.color = "red";
         // change color of font for launchStatus. 
         event.preventDefault();
-     } else if(cargoMassInput.value >= 10000){
+    } else if(cargoMassInput.value >= 10000){
         faultyItems.cargoMass.visibilty = "visible";
         faultyItems.cargoMass.innerHTML = "Too much mass for the shuttle to take off.";
-        launchStatus.innerHTML = "Shuttle not ready for launch";
+        launchStatus.innerHTML = "Shuttle Not Ready for Launch";
         launchStatus.style.color = "red";
         event.preventDefault();
-     } else {
+    } else {
         launchStatus.innerHTML = "Shuttle is ready for launch.";
         launchStatus.style.color = "green";
-     }
-        
+        }
+    }  
         });
      };
 

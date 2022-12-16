@@ -1,6 +1,6 @@
 // Write your JavaScript code here!
 
-const { pickPlanet, addDestinationInfo } = require("./scriptHelper");
+
 
 
 
@@ -8,8 +8,8 @@ const { pickPlanet, addDestinationInfo } = require("./scriptHelper");
     // let form = document.querySelector("testForm");
     //   form.addEventListener("formSubmit", function(event) {
     //     alert("submit clicked");-- already defined in formSubmission function
-        formSubmission();
-        preventDefault();
+       // formSubmission();
+       // preventDefault();
     });
 
     
