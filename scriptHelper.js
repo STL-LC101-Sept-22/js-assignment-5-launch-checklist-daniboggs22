@@ -37,53 +37,51 @@ function validateInput(testInput) {
     
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-    const form = document.getElementById("testForm");
-    // let testVar = document.getELementById("pilotName");
-    // alert('You typed' + testVar);
-    
-    let submitFormButton = document.getElementById("formSubmit");
-    submitFormButton.addEventListener("click", function(event) {
-        
-    })
-    form.addEventListener("formSubmit", function(event){
-        let pilotNameInput = document.getElementById("pilotName");
-        let copilotNameInput = document.getElementById("copilotName");
-        let fuelLevelInput = document.getElementById("fuelLevel");
-        let cargoMassInput = document.getElementById("cargoMass");
+ 
+        let pilotName = document.getElementById("pilotName");
+        let copilotName = document.getElementById("copilotName");
+        let fuel = document.getElementById("fuelLevel");
+        let cargo = document.getElementById("cargoMass");
         let faultyItems = document.getElementById("faultyItems");
         let launchStatus = document.getElementById("launchStatus");
         
-      if(pilotNameInput.value === ''|| copilotNameInput.value === '' || 
-      fuelLevelInput.value === '' || cargoMassInput.value === '' ) {
+      if(pilotName.value === ''|| copilotName.value === '' || 
+      fuel.value === '' || cargo.value === '' ) {
         alert("All fields are required!");
-        event.preventDefault();
-    } else if(validateInput(pilotNameInput.value) === "Is a Number" || 
-    validateInput(copilotNameInput.value) === "Is a Number" || 
-    validateInput(fuelLevelInput.value) === 'Not a Number' || 
-    validateInput(cargoMassInput.value) === "Not a Number") {
+       
+    } else if(validateInput(pilotName.value) === "Is a Number" || 
+    validateInput(copilotName.value) === "Is a Number" || 
+    validateInput(fuel.value) === 'Not a Number' || 
+    validateInput(cargo.value) === "Not a Number") {
         alert("Make sure to enter valid information for each field!");
-        event.preventDefault();
-    } else if(fuelLevelInput.value < 10000) {
-        //element.style.visibility = 'hidden';
-        faultyItems.fuelStatus.visibilty = "visible";
-        faultyItems.fuelStatus.value = "There is not enough fuel for the journey.";
+
+    }  else {
+       list.style.visibilty = "visible";
+        pilotStatus.innerHTML = `Pilot ${pilotName.value} is ready for launch`;
+       copilotStatus.innerHTML = `Co Pilot ${copilotName.value} is ready for launch`;
+       
+      
+        } if(fuel.value < 10000 && cargo.value > 10000) {
+        fuel.innerHTML = "There is not enough fuel for the journey.";
+        cargo.innerHTML = "Cargo mass too heavy for launch.";
         launchStatus.innerHTML = "Shuttle Not Ready for Launch";
         launchStatus.style.color = "red";
-        // change color of font for launchStatus. 
-        event.preventDefault();
-    } else if(cargoMassInput.value > 10000) {
-        faultyItems.cargoMass.visibilty = "visible";
-        faultyItems.cargoMass.innerHTML = "Too much mass for the shuttle to take off.";
+      
+    } else if(fuel.value > 10000 && cargo.value > 10000) {
+        fuel.innerHTML = "There is enough fuel for the journey.";
+        cargo.innerHTML = "Cargo mass too heavy for launch.";
         launchStatus.innerHTML = "Shuttle Not Ready for Launch";
         launchStatus.style.color = "red";
-        event.preventDefault();
+
     } else {
+        fuel.innerHTML = "There is enough fuel for the journey.";
+        cargo.innerHTML = "Cargo mass low enough for launch.";
         launchStatus.innerHTML = "Shuttle is ready for launch.";
         launchStatus.style.color = "green";
-        }
+    }
+}
      
-        });
-     };
+    
 
 
 async function myFetch() {

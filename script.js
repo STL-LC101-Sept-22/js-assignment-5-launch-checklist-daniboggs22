@@ -1,6 +1,4 @@
 // Write your JavaScript code here!
-
-
  window.addEventListener("load", function() {
 
    let listedPlanets;
@@ -19,6 +17,11 @@
        console.log(addDestinationInfo);
   // });
 });
-formSubmission();
+//Add a click event listener for submit button 
+const form = document.getElementById("launchForm");
+    form.addEventListener("submit", function(event) {
+   event.preventDefault();
+//call formSubmission();
 
+});
 });
