@@ -1,5 +1,6 @@
 // Write your JavaScript code here!
 
+
  window.addEventListener("load", function() {
 
    let listedPlanets;
@@ -17,7 +18,7 @@
     //   addDestinationInfo(results);
        console.log(addDestinationInfo);
   // });
-
-  
 });
+formSubmission();
+
 });

@@ -63,7 +63,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     validateInput(cargoMassInput.value) === "Not a Number") {
         alert("Make sure to enter valid information for each field!");
         event.preventDefault();
-    } else if(fuelLevelInput.value <= 10000) {
+    } else if(fuelLevelInput.value < 10000) {
         //element.style.visibility = 'hidden';
         faultyItems.fuelStatus.visibilty = "visible";
         faultyItems.fuelStatus.value = "There is not enough fuel for the journey.";
@@ -71,7 +71,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         launchStatus.style.color = "red";
         // change color of font for launchStatus. 
         event.preventDefault();
-    } else if(cargoMassInput.value >= 10000) {
+    } else if(cargoMassInput.value > 10000) {
         faultyItems.cargoMass.visibilty = "visible";
         faultyItems.cargoMass.innerHTML = "Too much mass for the shuttle to take off.";
         launchStatus.innerHTML = "Shuttle Not Ready for Launch";
@@ -92,23 +92,20 @@ async function myFetch() {
     planetsReturned = await fetch
     ('https://handlers.education.launchcode.org/static/planets.json')
     .then( function(response) {
-       response.json().then(function(data) {
-        return response.json();
-
-       });
-     });
-
-
-    return planetsReturned;
+        if(response.status >= 400) {
+            throw new Error ("Bad response.");
+        } else {
+            return  response.json()
+        }
+    });
+        return planetsReturned;
 }
 
 function pickPlanet(planets) {
-    let num = Math.floor(Math.random()*6);
+    let num = Math.floor(Math.random()*planets.length);
     let randomPlanet= planets[num];
-    console.log (randomPlanet);
+    return randomPlanet;
     
-
-
 }
 
 module.exports.addDestinationInfo = addDestinationInfo;
