@@ -1,3 +1,5 @@
+
+
 // Write your JavaScript code here!
  window.addEventListener("load", function() {
 
@@ -12,16 +14,19 @@
        let selectedPlanet = pickPlanet (listedPlanets);
        addDestinationInfo(document, selectedPlanet.name, selectedPlanet.diameter, selectedPlanet.star, selectedPlanet.distance, selectedPlanet.moons, selectedPlanet.image);
        // Below this comment call the appropriate helper functions to pick a planet from the list of planets and add that information to your destination.
-    //   results = pickPlanet(listedPlanets);
-    //   addDestinationInfo(results);
+    
        console.log(addDestinationInfo);
-  // });
+  
 });
-//Add a click event listener for submit button 
-const form = document.getElementById("launchForm");
-    form.addEventListener("submit", function(event) {
-   event.preventDefault();
-//call formSubmission();
 
+let list = document.getElementById("faultyItems");
+list.style.visibility = "hidden";
+const form = document.getElementById("launchForm");
+
+form.addEventListener("submit", function(event) {
+   event.preventDefault();
+//Update with variables and test
+//alert("submit button clicked!");
+formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
 });
 });
