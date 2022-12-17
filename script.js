@@ -1,20 +1,6 @@
 // Write your JavaScript code here!
 
-
-
-
-
-
-
  window.addEventListener("load", function() {
-    // let form = document.querySelector("testForm");
-    //   form.addEventListener("formSubmit", function(event) {
-    //     alert("submit clicked");-- already defined in formSubmission function
-       // formSubmission();
-       // preventDefault();
-    });
-
-    
 
    let listedPlanets;
    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
@@ -31,5 +17,7 @@
     //   addDestinationInfo(results);
        console.log(addDestinationInfo);
   // });
-   
+
+  
+});
 });
