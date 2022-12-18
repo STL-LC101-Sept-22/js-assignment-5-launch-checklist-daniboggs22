@@ -55,31 +55,30 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
     }  else {
        list.style.visibilty = "visible";
-        pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch.`;
-       copilotStatus.innerHTML = `Co Pilot ${copilot} is ready for launch.`;
-       
+       pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
+       copilotStatus.innerHTML = `Co-Pilot ${copilot} is ready for launch`;
        let launchStatus = document.getElementById("launchStatus");
        if(fuelLevel < 10000 && cargoLevel > 10000) {
-        fuel.innerHTML = "There is not enough fuel for the journey.";
-        cargo.innerHTML = "Cargo mass too heavy for launch.";
+        fuel.innerHTML = "Fuel level too low for launch";
+        cargo.innerHTML = "Cargo mass too heavy for launch";
         launchStatus.innerHTML = "Shuttle Not Ready for Launch";
         launchStatus.style.color = "red";
 
     } else if(fuelLevel < 10000 && cargoLevel  < 10000) {
-        fuel.innerHTML = "There is not enough fuel for the journey.";
-        cargo.innerHTML = "Cargo mass low enough for launch.";
+        fuel.innerHTML = "Fuel level too low for launch";
+        cargo.innerHTML = "Cargo mass low enough for launch";
         launchStatus.innerHTML = "Shuttle Not Ready for Launch";
         launchStatus.style.color = "red"; 
       
     } else if(fuelLevel >= 10000 && cargoLevel > 10000) {
-        fuel.innerHTML = "There is enough fuel for the journey.";
-        cargo.innerHTML = "Cargo mass too heavy for launch.";
+        fuel.innerHTML = "Fuel level high enough for launch";
+        cargo.innerHTML = "Cargo mass too heavy for launch";
         launchStatus.innerHTML = "Shuttle Not Ready for Launch";
         launchStatus.style.color = "red";
 
     } else {
-        fuel.innerHTML = "There is enough fuel for the journey.";
-        cargo.innerHTML = "Cargo mass low enough for launch.";
+        fuel.innerHTML = "Fuel level high enough for launch";
+        cargo.innerHTML = "Cargo mass low enough for launch";
         launchStatus.innerHTML = "Shuttle is ready for launch";
         launchStatus.style.color = "green";
         }
