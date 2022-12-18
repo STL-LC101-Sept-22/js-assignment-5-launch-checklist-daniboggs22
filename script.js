@@ -36,7 +36,9 @@ let fuelLevel = Number(fuelInput.value);
 let cargoInput = document.querySelector("input[name=cargoMass]");
 let cargoLevel = Number(cargoInput.value);
 
+
 formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
+list.style.visibility = "visible";
 
   });
 });
