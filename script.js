@@ -1,6 +1,4 @@
 
-
-
 // Write your JavaScript code here!
  window.addEventListener("load", function() {
 
@@ -18,6 +16,7 @@
        // Below this comment call the appropriate helper functions to pick a planet from the list of planets and add that information to your destination.
     
        console.log(addDestinationInfo);
+       console.log(validateInput(90));
        
   
 });
