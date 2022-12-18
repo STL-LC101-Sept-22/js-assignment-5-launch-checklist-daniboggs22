@@ -38,12 +38,12 @@ function validateInput(testInput) {
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
  
-        let pilotName = document.getElementById("pilotName");
-        let copilotName = document.getElementById("copilotName");
+        let launchStatus = document.getElementById("launchStatus");    
+        let pilotStatus = document.getElementById("pilotStatus");
+        let copilotStatus = document.getElementById("copilotStatus");
         let fuel = document.getElementById("fuelLevel");
         let cargo = document.getElementById("cargoMass");
-        let faultyItems = document.getElementById("faultyItems");
-        let launchStatus = document.getElementById("launchStatus");
+        
         
       if(pilotName.value === ''|| copilotName.value === '' || 
       fuel.value === '' || cargo.value === '' ) {
@@ -57,20 +57,20 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
     }  else {
        list.style.visibilty = "visible";
-        pilotStatus.innerHTML = `Pilot ${pilotName.value} is ready for launch`;
-       copilotStatus.innerHTML = `Co Pilot ${copilotName.value} is ready for launch`;
+        pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch.`;
+       copilotStatus.innerHTML = `Co Pilot ${copilot} is ready for launch.`;
        
       
         } if(fuel.value < 10000 && cargo.value > 10000) {
         fuel.innerHTML = "There is not enough fuel for the journey.";
         cargo.innerHTML = "Cargo mass too heavy for launch.";
-        launchStatus.innerHTML = "Shuttle Not Ready for Launch";
+        launchStatus.innerHTML = "Shuttle Not Ready for Launch.";
         launchStatus.style.color = "red";
       
     } else if(fuel.value > 10000 && cargo.value > 10000) {
         fuel.innerHTML = "There is enough fuel for the journey.";
         cargo.innerHTML = "Cargo mass too heavy for launch.";
-        launchStatus.innerHTML = "Shuttle Not Ready for Launch";
+        launchStatus.innerHTML = "Shuttle Not Ready for Launch.";
         launchStatus.style.color = "red";
 
     } else {

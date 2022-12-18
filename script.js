@@ -27,6 +27,20 @@ form.addEventListener("submit", function(event) {
    event.preventDefault();
 //Update with variables and test
 //alert("submit button clicked!");
+let pilotName = document.getElementById("pilotName");
+let pilot = pilotName.value;
+
+let copilotInput = document.querySelector("input[name=copilotName]");
+let copilot = copilotInput.value;
+
+let fuelInput = document.querySelector("input[name=fuelLevel]");
+let fuelLevel = fuelInput.value;
+
+let cargoInput = document.querySelector("input[name=cargoMass]");
+let cargoLevel = cargoInput.value;
+
 formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
+
 });
 });
+
