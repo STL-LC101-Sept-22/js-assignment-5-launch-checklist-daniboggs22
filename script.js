@@ -1,5 +1,4 @@
 
-
 // Write your JavaScript code here!
  window.addEventListener("load", function() {
 
@@ -11,11 +10,12 @@
        console.log(listedPlanets);
    }).then(function () {
        console.log(listedPlanets);
-       let selectedPlanet = pickPlanet(listedPlanets);
-       addDestinationInfo(document, selectedPlanet.name, selectedPlanet.diameter, selectedPlanet.star, selectedPlanet.distance, selectedPlanet.moons, selectedPlanet.image);
        // Below this comment call the appropriate helper functions to pick a planet from the list of planets and add that information to your destination.
-  
-});
+       let selectedPlanet = pickPlanet(listedPlanets);
+       console.log(selectedPlanet);
+       addDestinationInfo(document, selectedPlanet.name, selectedPlanet.diameter, selectedPlanet.star, selectedPlanet.distance, selectedPlanet.moons, selectedPlanet.image) 
+    
+   });
 
 let list = document.getElementById("faultyItems");
 list.style.visibility = "hidden";
